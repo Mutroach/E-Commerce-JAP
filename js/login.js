@@ -1,6 +1,7 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
+//document.addEventListener("DOMContentLoaded", function(e){ 
+//    document.getElementById("ingresar").onclick = function(){
+//        window.location.href = "./index.html";
+//    }
+//});
 
-});
+//Lo resolví por HTML para que me tome los "required" de los input.
