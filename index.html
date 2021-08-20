@@ -10,10 +10,19 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+ 
+  <!-- <script src="js/init.js"></script> -->
+  <script src="js/login.js"></script>
+
+  <!-- El código a continuación es para contar con autenticación real con Google-->
   <script src="js/loginGoogle.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script async defer src="https://apis.google.com/js/api.js"
+          onload="this.onload=function(){};handleClientLoad()"
+          onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>  
+
   <style>
     html, body{
       height: 100%;
@@ -43,28 +52,21 @@
     <img src="img/login.png" alt="" width="300">
     <h3>Por favor ingresa tus datos</h3>
     <form>
-      <input type="email" placeholder="Correo electrónico" required>
+      <input id="email" type="email" placeholder="Correo electrónico">
       <br>
-      <input type="password" placeholder="Contraseña" required>
+      <input id="contraseña" type="password" placeholder="Contraseña">
       <br>
-      <button formaction="front-page.html" type="submit">Ingresar</button>
-  </form>
+    </form>
+    <p id=faltanDatos></p>
+    <button id="ingresar" type="submit">Ingresar</button>    
   </div>
  
-   <button id="sign-in-or-out-button"
-          style="margin-left: 25px">Sign In/Authorize</button>
+  <button id="sign-in-or-out-button"
+          style="margin-left: 25px">Iniciar cesión con Gmail</button>
   <button id="revoke-access-button"
-          style="display: none; margin-left: 25px">Revoke access</button>
+          style="display: none; margin-left: 25px">Cerrar cesión de Gmail</button>
   
   <div id="auth-status" style="display: inline; padding-left: 25px"></div><hr>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script async defer src="https://apis.google.com/js/api.js"
-          onload="this.onload=function(){};handleClientLoad()"
-          onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
 
-
-  <script src="js/init.js"></script>
-<!--   <script src="js/login.js"></script> -->
 </body>
 </html>
