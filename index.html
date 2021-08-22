@@ -24,49 +24,46 @@
           onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>  
 
   <style>
-    html, body{
-      height: 100%;
-    }
-
     body {
       display: -ms-flexbox;
-      display: flex;
+      display: list-item;
       -ms-flex-align: center;
       align-items: center;
       padding-top: 40px;
       padding-bottom: 40px;
-      background-color: #f5f5f5;
+      background-color: #f8f9fa;
     }
-
     .signin {
       width: 100%;
-      max-width: 330px;
+      max-width: 400px;
       padding: 15px;
       margin: auto;
+    }
+    #faltanDatos{
+      color: red;
+      padding-top: 10px;
     }
   </style>
 </head>
 
 <body class="text-center">
+  <img src="img/login.png" alt="" width=45%>
   <div class="signin">
-    <img src="img/login.png" alt="" width="300">
-    <h3>Por favor ingresa tus datos</h3>
+    <h4 class="m-3" style="color:#229fbc;">Por favor ingresa tus datos</h4>
     <form>
-      <input id="email" type="email" placeholder="Correo electrónico">
+      <input id="email" type="email" placeholder="Correo electrónico" style="width: 77%;">
       <br>
-      <input id="contraseña" type="password" placeholder="Contraseña">
+      <input id="contraseña" type="password" placeholder="Contraseña" style="width: 77%; margin-top: 10px;">
       <br>
     </form>
     <p id=faltanDatos></p>
-    <button id="ingresar" type="submit">Ingresar</button>    
+    <button id="ingresar" type="submit" class="btn btn-info">Ingresar</button>    
   </div>
  
-  <button id="sign-in-or-out-button"
-          style="margin-left: 25px">Iniciar cesión con Gmail</button>
-  <button id="revoke-access-button"
-          style="display: none; margin-left: 25px">Cerrar cesión de Gmail</button>
-  
-  <div id="auth-status" style="display: inline; padding-left: 25px"></div><hr>
-
+  <div class="signin">
+    <button id="sign-in-or-out-button" style="margin-left: 25px" class="btn btn-info">Iniciar sesión con Gmail</button>
+    <button id="revoke-access-button" style="display: none; margin-left: 25px" class="btn btn-info">Cerrar sesión de Gmail</button>
+    <div id="auth-status" style="display: inline; padding-left: 25px"></div>
+  </div>
 </body>
 </html>
