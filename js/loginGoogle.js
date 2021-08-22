@@ -58,15 +58,14 @@ var GoogleAuth;
     var user = GoogleAuth.currentUser.get();
     var isAuthorized = user.hasGrantedScopes(SCOPE);
     if (isAuthorized) {
-      $('#sign-in-or-out-button').html('Sign out');
+      $('#sign-in-or-out-button').html('Cerrar Sesión');
       $('#revoke-access-button').css('display', 'inline-block');
       $('#auth-status').html('You are currently signed in and have granted ' +
           'access to this app.');
     } else {
-      $('#sign-in-or-out-button').html('Sign In/Authorize');
+      $('#sign-in-or-out-button').html('Iniciar sesión con Gmail');
       $('#revoke-access-button').css('display', 'none');
-      $('#auth-status').html('You have not authorized this app or you are ' +
-          'signed out.');
+      $('#auth-status').html('No has vinculado tu cuenta de Gmail');
     }
   }
 
