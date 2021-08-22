@@ -60,8 +60,7 @@ var GoogleAuth;
     if (isAuthorized) {
       $('#sign-in-or-out-button').html('Cerrar Sesión');
       $('#revoke-access-button').css('display', 'inline-block');
-      $('#auth-status').html('You are currently signed in and have granted ' +
-          'access to this app.');
+      $('#auth-status').html('Sesión iniciada correctamente con Gmail');
     } else {
       $('#sign-in-or-out-button').html('Iniciar sesión con Gmail');
       $('#revoke-access-button').css('display', 'none');
