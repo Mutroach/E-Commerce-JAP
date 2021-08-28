@@ -22,8 +22,15 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <div class="py-2 d-none d-md-inline-block" name="infoUsuario" style="color: white;"></div>
       </div>
     </nav>
+    <div class="container p-5" id="filtroPrecio">
+      <a>Precio</a>
+      <input type="number" placeholder="min." id="minimo" style="width: 70px;">
+      <input type="number" placeholder="máx." id="maximo" style="width: 70px;">
+      <button type="button" id="filtroPrecioBtn">Filtrar</button>
+    </div>
     <div class="container p-5" id="productos">
     </div>
     <footer class="text-muted bg-light">
@@ -39,6 +46,6 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
-    <script src="js/products.js"></script>
+    <script src="js/products.js" defer></script>
   </body>
 </html>
