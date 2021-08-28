@@ -6,11 +6,12 @@ fetch(PRODUCTS_URL)
     .then(response => response.json())
     .then(data => {
         jsonData = data;
+        content();
     })
 
 function content(){
     let htmlContent = "";
-
+   
     for(let i = 0; i < jsonData.length; i++){
         let product = jsonData[i];
 
@@ -34,12 +35,11 @@ function content(){
         if(product.cost >= precioMinimo && product.cost <= precioMaximo) {
             document.getElementById("productos").innerHTML += htmlContent;
         }
-        else if(precioMinimo === "" && precioMaximo === ""){
+        else if(precioMinimo == "" && precioMaximo == ""){
             document.getElementById("productos").innerHTML += htmlContent;
         }
     }
-    console.log(precioMinimo);
-    console.log(precioMaximo);
+    console.log("buenas")
 }
 
 document.getElementById("filtroPrecioBtn").onclick = function() {
