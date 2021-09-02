@@ -25,16 +25,17 @@
         <div class="py-2 d-none d-md-inline-block" name="infoUsuario" style="color: white;"></div>
       </div>
     </nav>
-    <div class="col text-right" style="padding: 15px;" id="filtroPrecio">
+    <div class="col text-right" style="padding: 15px;">
       <a>Precio</a>
       <input type="number" placeholder="min." id="minimo" style="width: 70px;">
       <input type="number" placeholder="máx." id="maximo" style="width: 70px;">
       <button type="button" class="btn btn-light" id="filtroPrecioBtn">Filtrar</button>
-    </div>
-    <div class="col text-right" style="padding: 15px;" id="filtrosPrecioRelvancia">
+      <br>
       <button type="button" class="btn btn-light" id="filtroAscendenteBtn">Menor precio</button>
       <button type="button" class="btn btn-light" id="filtroDescendenteBtn">Mayor precio</button>
       <button type="button" class="btn btn-light" id="filtroRelevanciaBtn">Relevancia</button>
+      <br>
+      <input type="search" class="form-control" placeholder="Buscar" style="width: auto; float: right;" id="buscar">
     </div>
     <div class="container p-5" id="productos">
     </div>

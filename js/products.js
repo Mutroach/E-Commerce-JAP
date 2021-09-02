@@ -10,14 +10,14 @@ fetch(PRODUCTS_URL)
     .then(data => {
         jsonData = data;
         sortPrecioAscendente();
-        content();
+        content(jsonData);
     })
 
-function content(){
+function content(papafrita){
     let htmlContent = "";
    
-    for(let i = 0; i < jsonData.length; i++){
-        let product = jsonData[i];
+    for(let i = 0; i < papafrita.length; i++){
+        let product = papafrita[i];
 
         htmlContent = 
         `<div class="list-group-item list-group-item-action">
@@ -49,23 +49,34 @@ document.getElementById("filtroPrecioBtn").onclick = function() {
     document.getElementById("productos").innerHTML = "";
     precioMinimo = document.getElementById("minimo").value;
     precioMaximo = document.getElementById("maximo").value;
-    content();
+    content(jsonData);
 }
 
 document.getElementById("filtroAscendenteBtn").onclick = function() {
     document.getElementById("productos").innerHTML = "";
     sortPrecioAscendente();
-    content();
+    content(jsonData);
 }
 
 document.getElementById("filtroDescendenteBtn").onclick = function() {
     document.getElementById("productos").innerHTML = "";
     sortPrecioDescendente();
-    content();
+    content(jsonData);
 }
 
 document.getElementById("filtroRelevanciaBtn").onclick = function() {
     document.getElementById("productos").innerHTML = "";
     sortRelevancia();
-    content();
+    content(jsonData);
 }
+
+document.getElementById("buscar").addEventListener("keyup", (event) => {
+    //let busquedaRealizada = event.key;
+    let busquedaRealizada = document.getElementById("buscar").value.toLowerCase();
+    let jsonBusqueda = jsonData.filter((producto) => {
+        return (producto.name.toLowerCase().includes(busquedaRealizada) || producto.description.toLowerCase().includes(busquedaRealizada));
+    });
+    document.getElementById("productos").innerHTML = "";
+    content(jsonBusqueda);
+    //console.log(document.getElementById("buscar").value);
+})
