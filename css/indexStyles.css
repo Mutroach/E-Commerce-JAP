@@ -1,0 +1,47 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-color: #f8f9fa;
+}
+
+.signin {
+    padding: 3px;
+    margin: auto;
+}
+
+#faltanDatos{
+    color: red;
+    padding-top: 10px;
+}
+
+#logo {
+    width: 50%;
+}
+
+#contraseña {
+    margin-top: 10px
+}
+
+input {
+    width: 25%;
+}
+h4 {
+    justify-content: center;
+    color:#229fbc;
+    font-size: 2.1vw;
+}
+
+@media only screen and (max-width:700px) {
+
+    #logo {
+        width: 95%;
+    }
+
+    h4 {
+        font-size: 6vw;
+    }
+
+    input {
+        width: 75%;
+    }
+}

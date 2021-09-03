@@ -15,23 +15,26 @@
     <link rel="shortcut icon" href="img/Logo JAP transparente.png">
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="front-page.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <div class="py-2 d-none d-md-inline-block" name="infoUsuario" style="color: white;"></div>
+    <nav class="site-header sticky-top py-1 bg-dark" id="headerContainer">
+      <input type="image" src="img/hamburger_icon.png" class="menuIcon" onclick="desplegarMenu()">
+      <div class="container d-flex flex-column flex-md-row justify-content-between" id="header">
+        <a class="py-2 d-md-inline-block" href="front-page.html">Inicio</a>
+        <a class="py-2 d-md-inline-block" href="categories.html">Categorías</a>
+        <a class="py-2 d-md-inline-block" href="products.html">Productos</a>
+        <a class="py-2 d-md-inline-block" href="sell.html">Vender</a>
+        <a class="py-2 d-md-inline-block" href="cart.html">Mi carrito</a>
+        <div class="py-2 d-md-inline-block" name="infoUsuario" style="color: white;"></div>
       </div>
     </nav>
     <main role="main">
-      <section class="jumbotron text-center">
+      <img src="img/cover_back.png" alt="" id="cover">
+      <img src="img/login.png" alt="" id="miniCover">
+<!--       <section class="jumbotron text-center">
         <div class="m-5">
           <h1></h1>
         </div>
-      </section>
-      <div class="album py-5 bg-light">
+      </section> -->
+      <div class="album bg-light">
         <div class="container">
           <div class="row">
             <div class="col-md-4">

@@ -1,12 +1,4 @@
-.jumbotron, .card-body, .container, .site-header{
-    font-family: 'Raleway', serif !important;
-}
-
-.jumbotron .display-4{
-    font-weight: bold;
-}
-
-.jumbotron {
+/* .jumbotron {
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
@@ -17,13 +9,14 @@
   background-repeat: no-repeat;
   color: black;
   font-weight: bold;
+} */
+
+.jumbotron, .card-body, .container, .site-header{
+  font-family: 'Raleway', serif !important;
 }
 
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
+.jumbotron .display-4{
+  font-weight: bold;
 }
 
 .jumbotron p:last-child {
@@ -46,8 +39,8 @@
 }
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 footer p {
@@ -110,14 +103,6 @@ footer p {
 .lds-ring div:nth-child(3) {
   animation-delay: -0.15s;
 }
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 #spinner-wrapper{
   position: fixed;
@@ -139,3 +124,80 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+#cover {
+  width: 100%;
+}
+
+#miniCover {
+  display: none;
+  width: 100%;
+}
+
+.card-body {
+  padding-top: 0;
+}
+
+h3.m-3 {
+  margin: 20px;
+}
+
+.menuIcon {
+  position: fixed;
+  right: 3vw;
+  top: 1vw;
+  width: 4vw;
+  filter: invert(1);
+  display: none;
+}
+
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*@media (min-width: 768px) {
+   .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }  
+}*/ 
+
+@media only screen and (max-width:767px) {
+  #cover {
+    display: none;
+  }
+  #miniCover, .menuIcon{
+    display: block;
+  }
+
+  #headerContainer {
+    height: 6vw;
+    padding: 0 !important;
+  }
+
+  #header {
+    padding: 0 !important;
+    padding-top: 5vw !important;
+    max-width: 100% !important;
+    position: fixed;
+    right: 0;
+    display: none !important;
+  }
+
+  .py-2 {
+    display: block !important;
+    background:#343a40;
+    text-align: right;
+    padding-right: 4vw;
+    right: 0;
+    
+  }
+
+}
+

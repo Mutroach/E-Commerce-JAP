@@ -11,10 +11,9 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/indexStyles.css" rel="stylesheet">
   <link rel="shortcut icon" href="img/Logo JAP transparente.png">
 
-  <!-- <script src="js/init.js"></script> -->
   <script src="js/login.js" defer></script>
 
   <!-- El código a continuación es para contar con autenticación real con Google-->
@@ -23,42 +22,20 @@
   <script async defer src="https://apis.google.com/js/api.js"
           onload="this.onload=function(){};handleClientLoad()"
           onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>  
-
-  <style>
-    body {
-      display: -ms-flexbox;
-      display: list-item;
-      -ms-flex-align: center;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: #f8f9fa;
-    }
-    .signin {
-      width: 100%;
-      max-width: 400px;
-      padding: 15px;
-      margin: auto;
-    }
-    #faltanDatos{
-      color: red;
-      padding-top: 10px;
-    }
-  </style>
 </head>
 
 <body class="text-center">
-  <img src="img/login.png" alt="" width=45%>
+  <div><img src="img/login.png" id="logo"></div>
+  <h4>Por favor ingresa tus datos</h4>
   <div class="signin">
-    <h4 class="m-3" style="color:#229fbc;">Por favor ingresa tus datos</h4>
     <form>
-      <input id="email" type="email" placeholder="Correo electrónico" style="width: 77%;">
+      <input id="email" type="email" placeholder="Correo electrónico">
       <br>
-      <input id="contraseña" type="password" placeholder="Contraseña" style="width: 77%; margin-top: 10px;">
+      <input id="contraseña" type="password" placeholder="Contraseña">
       <br>
     </form>
     <p id=faltanDatos></p>
-    <button id="ingresar" type="submit" class="btn btn-info">Ingresar</button>    
+    <button id="ingresar" type="submit" class="btn btn-info">Ingresar</button>
   </div>
  
   <div class="signin">
