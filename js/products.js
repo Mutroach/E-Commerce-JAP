@@ -9,15 +9,15 @@ fetch(PRODUCTS_URL)
     .then(response => response.json())
     .then(data => {
         jsonData = data;
-        sortPrecioAscendente();
+        //sortPrecioAscendente();
         content(jsonData);
     })
 
-function content(papafrita){
+function content(jsonParametro){
     let htmlContent = "";
    
-    for(let i = 0; i < papafrita.length; i++){
-        let product = papafrita[i];
+    for(let i = 0; i < jsonParametro.length; i++){
+        let product = jsonParametro[i];
 
         htmlContent = 
         `<div class="list-group-item list-group-item-action">

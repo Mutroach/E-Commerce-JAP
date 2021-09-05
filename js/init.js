@@ -40,8 +40,7 @@ var getJSONData = function(url){
     });
 }
 
-document.getElementsByName("infoUsuario")[0].innerHTML = localStorage.getItem("email") + " Último acceso: " + localStorage.getItem("fechaYhora");
-
+document.getElementsByName("infoUsuario")[0].innerHTML = localStorage.getItem("email") + ` Último acceso: ` + localStorage.getItem("fechaYhora");
 
 
 
@@ -53,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
 let menuLista = document.getElementById("header");
-
 function desplegarMenu() {
   if(menuLista.style.display == "none") {
     document.getElementById("header").setAttribute("style", "display: block !important;");
