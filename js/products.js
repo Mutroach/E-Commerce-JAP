@@ -20,7 +20,7 @@ function content(jsonParametro){
         let product = jsonParametro[i];
 
         htmlContent = 
-        `<div class="list-group-item list-group-item-action">
+        `<a class="list-group-item list-group-item-action" href="product-info.html">
             <div class="row">
                 <div class="col-3">
                     <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
@@ -34,7 +34,7 @@ function content(jsonParametro){
                     <div><h5>` + product.description + `</h5></div>
                 </div>
             </div>
-        </div>`;
+        </a>`;
         
         if(product.cost >= precioMinimo && product.cost <= precioMaximo || product.cost >= precioMinimo && precioMaximo == "" || product.cost <= precioMaximo && precioMinimo == "") {
             document.getElementById("productos").innerHTML += htmlContent;

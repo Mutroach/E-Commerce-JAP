@@ -26,17 +26,32 @@
       </div>
     </nav>
     <div class="col text-right" style="padding: 15px;">
-      <a>Precio</a>
-      <input type="number" placeholder="min." id="minimo" style="width: 70px;">
-      <input type="number" placeholder="máx." id="maximo" style="width: 70px;">
-      <button type="button" class="btn btn-light" id="filtroPrecioBtn">Filtrar</button>
+        <a>Filtrar por precio</a>
+        <input type="number" placeholder="min." id="minimo" style="width: 70px;">
+        <input type="number" placeholder="máx." id="maximo" style="width: 70px;">
+        <button type="button" class="btn btn-light" id="filtroPrecioBtn">Filtrar</button>
       <br>
-      <button type="button" class="btn btn-light" id="filtroAscendenteBtn">Menor precio</button>
-      <button type="button" class="btn btn-light" id="filtroDescendenteBtn">Mayor precio</button>
-      <button type="button" class="btn btn-light" id="filtroRelevanciaBtn">Relevancia</button>
-      <br>
-      <input type="search" class="form-control" placeholder="Buscar" style="width: auto; float: right;" id="buscar">
+      
+      <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+        <label class="btn btn-light" id="filtroAscendenteBtn">
+          <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up mr-1"></i>Menor precio
+        </label>
+        <label class="btn btn-light" id="filtroDescendenteBtn">
+          <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Mayor precio
+        </label>
+        <label class="btn btn-light" id="filtroRelevanciaBtn">
+            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
+        </label>
+        
+        <label>
+          <input type="search" class="form-control" placeholder="Buscar" id="buscar">
+        </label>
+        
+      </div>
+
+    <!--   <input type="search" class="form-control" placeholder="Buscar" id="buscar"> -->
     </div>
+
     <div class="container p-5" id="productos">
     </div>
     <footer class="text-muted bg-light">
