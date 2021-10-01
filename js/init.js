@@ -40,7 +40,8 @@ var getJSONData = function(url){
     });
 }
 
-document.getElementsByName("infoUsuario")[0].innerHTML = localStorage.getItem("email") + ` Último acceso: ` + localStorage.getItem("fechaYhora");
+document.getElementsByName("infoUsuario")[0].innerHTML = localStorage.getItem("email");
+document.getElementById("ultimoAcceso").innerHTML = ` Últ. acceso: ` + localStorage.getItem("fechaYhora");
 
 
 
@@ -50,7 +51,7 @@ document.getElementsByName("infoUsuario")[0].innerHTML = localStorage.getItem("e
 document.addEventListener("DOMContentLoaded", function(e){
 });
 
-
+/* 
 let menuLista = document.getElementById("header");
 function desplegarMenu() {
   if(menuLista.style.display == "none") {
@@ -61,4 +62,4 @@ function desplegarMenu() {
     document.getElementById("header").setAttribute("style", "display: none !important;");
     console.log("chau");
   }
-}
+} */

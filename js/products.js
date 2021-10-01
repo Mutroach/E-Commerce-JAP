@@ -1,16 +1,16 @@
 let precioMinimo = "";
 let precioMaximo = "";
-let jsonData = "";
-function sortPrecioAscendente(){ jsonData.sort((item1, item2) => item1.cost - item2.cost)};
-function sortPrecioDescendente(){ jsonData.sort((item1, item2) => item2.cost - item1.cost)};
-function sortRelevancia(){ jsonData.sort((item1, item2) => item2.soldCount - item1.soldCount)};
+var productsJsonData = "";
+function sortPrecioAscendente(){ productsJsonData.sort((item1, item2) => item1.cost - item2.cost)};
+function sortPrecioDescendente(){ productsJsonData.sort((item1, item2) => item2.cost - item1.cost)};
+function sortRelevancia(){ productsJsonData.sort((item1, item2) => item2.soldCount - item1.soldCount)};
 
 fetch(PRODUCTS_URL)
     .then(response => response.json())
     .then(data => {
-        jsonData = data;
+        productsJsonData = data;
         //sortPrecioAscendente();
-        content(jsonData);
+        content(productsJsonData);
     })
 
 function content(jsonParametro){
@@ -22,7 +22,7 @@ function content(jsonParametro){
         htmlContent = 
         `<a class="list-group-item list-group-item-action" href="product-info.html">
             <div class="row">
-                <div class="col-3">
+                <div class="col-md-3">
                     <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                 </div>
                 <div class="col">
@@ -49,31 +49,30 @@ document.getElementById("filtroPrecioBtn").onclick = function() {
     document.getElementById("productos").innerHTML = "";
     precioMinimo = document.getElementById("minimo").value;
     precioMaximo = document.getElementById("maximo").value;
-    content(jsonData);
+    content(productsJsonData);
 }
 
 document.getElementById("filtroAscendenteBtn").onclick = function() {
     document.getElementById("productos").innerHTML = "";
     sortPrecioAscendente();
-    content(jsonData);
+    content(productsJsonData);
 }
 
 document.getElementById("filtroDescendenteBtn").onclick = function() {
     document.getElementById("productos").innerHTML = "";
     sortPrecioDescendente();
-    content(jsonData);
+    content(productsJsonData);
 }
 
 document.getElementById("filtroRelevanciaBtn").onclick = function() {
     document.getElementById("productos").innerHTML = "";
     sortRelevancia();
-    content(jsonData);
+    content(productsJsonData);
 }
 
 document.getElementById("buscar").addEventListener("keyup", (event) => {
-    //let busquedaRealizada = event.key;
     let busquedaRealizada = document.getElementById("buscar").value.toLowerCase();
-    let jsonBusqueda = jsonData.filter((producto) => {
+    let jsonBusqueda = productsJsonData.filter((producto) => {
         return (producto.name.toLowerCase().includes(busquedaRealizada) || producto.description.toLowerCase().includes(busquedaRealizada));
     });
     document.getElementById("productos").innerHTML = "";

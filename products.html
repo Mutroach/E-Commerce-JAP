@@ -25,14 +25,24 @@
         <div class="py-2 d-none d-md-inline-block" name="infoUsuario" style="color: white;"></div>
       </div>
     </nav>
-    <div class="col text-right" style="padding: 15px;">
+    
+    <div class="fondito">
+    
+      <div class="text-center p-4">
+        <h2 style="color:#229fbc;">Productos</h2>
+    </div>
+
+    <div class="container">
+
+    <div style="padding: 15px;">
         <a>Filtrar por precio</a>
-        <input type="number" placeholder="min." id="minimo" style="width: 70px;">
-        <input type="number" placeholder="máx." id="maximo" style="width: 70px;">
+        <input type="number" placeholder="min." id="minimo" style="width: 60px;">
+        <input type="number" placeholder="máx." id="maximo" style="width: 60px;">
         <button type="button" class="btn btn-light" id="filtroPrecioBtn">Filtrar</button>
-      <br>
       
-      <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+      <span style="width: 5%;"> </span>
+
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-light" id="filtroAscendenteBtn">
           <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up mr-1"></i>Menor precio
         </label>
@@ -48,12 +58,14 @@
         </label>
         
       </div>
-
-    <!--   <input type="search" class="form-control" placeholder="Buscar" id="buscar"> -->
     </div>
 
-    <div class="container p-5" id="productos">
+    <div class="row" id="productos">
     </div>
+
+  </div>
+
+  </div>
     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">
