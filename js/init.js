@@ -43,23 +43,6 @@ var getJSONData = function(url){
 document.getElementsByName("infoUsuario")[0].innerHTML = localStorage.getItem("email");
 document.getElementById("ultimoAcceso").innerHTML = ` Últ. acceso: ` + localStorage.getItem("fechaYhora");
 
-
-
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
-});
-
-/* 
-let menuLista = document.getElementById("header");
-function desplegarMenu() {
-  if(menuLista.style.display == "none") {
-    document.getElementById("header").setAttribute("style", "display: block !important;");
-    console.log("hola")
-  }
-  else {
-    document.getElementById("header").setAttribute("style", "display: none !important;");
-    console.log("chau");
-  }
-} */
+function cerrarSesion() {
+  localStorage.clear("email");
+}

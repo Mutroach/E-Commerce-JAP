@@ -1,3 +1,12 @@
+var productosRelacionados = "";
+var productsJsonData = "";
+
+fetch(PRODUCTS_URL)
+    .then(response => response.json())
+    .then(data => {
+        productsJsonData = data;
+    })
+
 fetch(PRODUCT_INFO_URL)
     .then(response => response.json())
     .then(data => {
@@ -85,38 +94,46 @@ function fechaYhora() {
     return fechaYhora;
 }
 
-var productosRelacionados = "";
-var productsJsonData = "";
-
-fetch(PRODUCTS_URL)
-    .then(response => response.json())
-    .then(data => {
-        productsJsonData = data;
-    })
-
 function carrousel() {
-    document.getElementById("carrousel").innerHTML = `
+    let carrouselContent1 = `
         <h4 class="mb-1"> Productos relacionados </h4>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-            <img class="d-block w-100" src="`+ productsJsonData[productosRelacionados[0]].imgSrc +`" data-src="holder.js/900x400?theme=social" data-holder-rendered="true" style="width: 100px; height: auto;">
-    
-            <div class="carousel-caption d-none d-md-block">
-                <h5>` + productsJsonData[productosRelacionados[0]].name + `</h5>
-            </div>
-            </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="`+ productsJsonData[productosRelacionados[1]].imgSrc +`" data-src="holder.js/900x400?theme=industrial" data-holder-rendered="true" style="width: 100px; height: auto;">
-    
-            <div class="carousel-caption d-none d-md-block">
-                <h5>` + productsJsonData[productosRelacionados[1]].name + `</h5>
-            </div>
-            </div>
+        <ol class="carousel-indicators">`;
+
+    let carrouselContent2 = ``;
+
+    for (let producto = 0; producto < productosRelacionados.length; producto++) {
+        
+        switch (producto) {
+            case 0:
+                carrouselContent1 += `<li data-target="#carouselExampleIndicators" data-slide-to="`+ producto +`" class="active"></li>`
+                carrouselContent2 += `
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <a href="product-info.html"><img class="d-block w-100" src="`+ productsJsonData[productosRelacionados[producto]].imgSrc +`" data-src="holder.js/900x400?theme=social" data-holder-rendered="true" style="width: 100px; height: auto;"></a>
+            
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>` + productsJsonData[productosRelacionados[producto]].name + `</h5>
+                        </div>
+                    </div>`
+                break;
+        
+            default:
+                carrouselContent1 += `<li data-target="#carouselExampleIndicators" data-slide-to="`+ producto +`"></li>`
+                carrouselContent2 += `
+                    <div class="carousel-item">
+                        <a href="product-info.html"><img class="d-block w-100" src="`+ productsJsonData[productosRelacionados[producto]].imgSrc +`" data-src="holder.js/900x400?theme=industrial" data-holder-rendered="true" style="width: 100px; height: auto;"></a>
+            
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>` + productsJsonData[productosRelacionados[producto]].name + `</h5>
+                        </div>
+                    </div>`
+                break;
+        }
+    }
+
+    carrouselContent1 += `</ol>`;
+    carrouselContent2 += `
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -126,10 +143,10 @@ function carrousel() {
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-        </div>`
+    </div>`
+
+    document.getElementById("carrousel").innerHTML = carrouselContent1 + carrouselContent2;
 }
-
-
 
 setTimeout(() => {
     carrousel();
