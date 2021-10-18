@@ -56,20 +56,54 @@
 
   <div class="fondito">
     <div class="text-center p-4">
-      <h2 style="color:#229fbc;">Carrito</h2>
+      <h2>Carrito</h2>
     </div>
 
     <div class="container" id="itemsCarrito">   
     </div>
+
+    <div class="container">
+      <div class="list-group-item">
+        <h4 class="mb-3">Tipo de envío</h4>
+        <div style="display:flex; justify-content:space-around;">
+          <span><input type="radio" name="envío" id="standard" checked onclick="porcentajeEnvio(0.05)"> <label for="standard">Standard 12 a 15 días (5%)</label></span>
+          <span><input type="radio" name="envío" id="express" onclick="porcentajeEnvio(0.07)"> <label for="express">Express 5 a 8 días (7%)</label></span>
+          <span><input type="radio" name="envío" id="premium" onclick="porcentajeEnvio(0.15)"> <label for="premium">Premium 2 a 5 días (15%)</label></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="list-group-item">
+        <h4 class="mb-3">Dirección de envío</h4>
+        <input type="text" placeholder="Calle">
+        <input type="text" placeholder="Número">
+        <input type="text" placeholder="Ciudad">
+      </div>
+    </div>
+
     <div class="container" id="cuentasCarrito">
       <div class="list-group-item">
-        <h4> Subtotal pesos </h4>
-        <p id="subtotal"></p>
-        <h4> Envío? </h4>
-        <p> Papafrita </p>
-    </div>
+        <h4 class="mb-3">Costos</h4>
+        <p>Subtotal: <span id="subtotal"></span></p>
+        <p>Costo de envío: <span id="costoEnvio"></span></p>
+        <p>Total: <span id="total"></span></p>
+
+      </div>
     </div>
   </div>
+
+
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2021</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+
 
   <div id="spinner-wrapper">
     <div class="lds-ring">

@@ -15,12 +15,13 @@ fetch(PRODUCTS_URL)
 
 function content(jsonParametro){
     let htmlContent = "";
+    
    
     for(let i = 0; i < jsonParametro.length; i++){
         let product = jsonParametro[i];
 
         htmlContent = 
-        `<a class="list-group-item list-group-item-action" href="product-info.html">
+        `<a class="list-group-item list-group-item-action" href="product-info.html" onclick="seleccionarProducto(`+ product.cost +`)">
             <div class="row">
                 <div class="col-md-3">
                     <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
@@ -79,3 +80,7 @@ document.getElementById("buscar").addEventListener("keyup", (event) => {
     content(jsonBusqueda);
     //console.log(document.getElementById("buscar").value);
 })
+
+function seleccionarProducto(valorProducto) {
+    localStorage.setItem("ProductoSeleccionado", valorProducto)
+}

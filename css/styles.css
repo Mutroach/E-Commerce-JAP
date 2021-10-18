@@ -167,9 +167,9 @@ textarea {
   src: url("../webfonts/rimouski-font/rimouski\ sb.otf");
 }
 
-h2 {
+/* h2 {
   font-family: "rimouski";
-}
+} */
 
 @keyframes lds-ring {
   0% {
