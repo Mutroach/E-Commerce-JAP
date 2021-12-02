@@ -16,7 +16,7 @@ fetch(CARRITO_URL)
         for (let i = 0; i < carrito.articles.length; i++) {
             
             itemData += `
-            <div class="list-group-item row justify-content-md-center";>
+            <div class="list-group-item justify-content-md-center";>
                     <div class="table">
                         <tr>
                             <span style="display:flex; justify-content:space-around; align-items: center;">
@@ -81,4 +81,40 @@ fetch(CARRITO_URL)
         costoEnvio = porcentaje;
         document.getElementById("costoEnvio").innerHTML = Math.round(subTotal * costoEnvio);
         document.getElementById("total").innerHTML = Math.round((subTotal * costoEnvio) + subTotal);
+    }
+
+    function confirmarCompra(){
+        if(document.getElementsByName("cantidad")[0].value == 0 || document.getElementsByName("cantidad")[1].value == 0){
+            document.getElementById("verificacionDatosCompletos").innerHTML = `<p style="color:red; display:flex; justify-content:center;">Debes comprar al menos un artículo de cada producto seleccionado</p>`
+        }
+
+        else if(document.getElementsByClassName("DireccionEnvio")[0].value == "" || document.getElementsByClassName("DireccionEnvio")[1].value == "" || document.getElementsByClassName("DireccionEnvio")[2].value == ""){
+            document.getElementById("verificacionDatosCompletos").innerHTML = `<p style="color:red; display:flex; justify-content:center;">Debes ingresar la dirección de envío completa</p>` 
+        }
+
+        else if((document.getElementById("numero").value == "" || document.getElementById("codigo").value == "" || document.getElementById("vencimiento").value == "") && document.getElementById("cuentaBancaria").value == ""){
+            document.getElementById("verificacionDatosCompletos").innerHTML = `<p style="color:red; display:flex; justify-content:center;">Debes completar los datos de la forma de pago</p>` 
+        }
+
+        else{
+            document.getElementById("verificacionDatosCompletos").innerHTML = "";
+            alert("Su compra ha sido realizada con éxito!") 
+        }
+    }
+
+
+    document.getElementById("transferencia").onclick = function transferencia(){
+        document.getElementById("numero").setAttribute("disabled", true);
+        document.getElementById("codigo").setAttribute("disabled", true);
+        document.getElementById("vencimiento").setAttribute("disabled", true);
+
+        document.getElementById("cuentaBancaria").removeAttribute("disabled", true);
+    }
+    
+    document.getElementById("tarjeta").onclick = function tarjeta(){
+        document.getElementById("cuentaBancaria").setAttribute("disabled", true);
+
+        document.getElementById("numero").removeAttribute("disabled", true);
+        document.getElementById("codigo").removeAttribute("disabled", true);
+        document.getElementById("vencimiento").removeAttribute("disabled", true);
     }

@@ -45,6 +45,10 @@ document.getElementById("ultimoAcceso").innerHTML = ` Últ. acceso: ` + localSto
 
 function cerrarSesion() {
   localStorage.clear("email");
+
+  localStorage.clear("Nombre");
+  localStorage.clear("Edad");
+  localStorage.clear("Telefono");
 }
 
 function fechaYhora() {

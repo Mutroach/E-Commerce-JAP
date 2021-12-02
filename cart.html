@@ -62,34 +62,90 @@
     <div class="container" id="itemsCarrito">   
     </div>
 
-    <div class="container">
-      <div class="list-group-item">
-        <h4 class="mb-3">Tipo de envío</h4>
-        <div style="display:flex; justify-content:space-around;">
-          <span><input type="radio" name="envío" id="standard" checked onclick="porcentajeEnvio(0.05)"> <label for="standard">Standard 12 a 15 días (5%)</label></span>
-          <span><input type="radio" name="envío" id="express" onclick="porcentajeEnvio(0.07)"> <label for="express">Express 5 a 8 días (7%)</label></span>
-          <span><input type="radio" name="envío" id="premium" onclick="porcentajeEnvio(0.15)"> <label for="premium">Premium 2 a 5 días (15%)</label></span>
-        </div>
-      </div>
-    </div>
+    <br>
 
     <div class="container">
       <div class="list-group-item">
+        <h4 class="mb-3">Tipo de envío</h4>
+        <div>
+          <span><input type="radio" name="envío" id="standard" checked onclick="porcentajeEnvio(0.05)"> <label for="standard">Standard 12 a 15 días (5%)</label></span><br>
+          <span><input type="radio" name="envío" id="express" onclick="porcentajeEnvio(0.07)"> <label for="express">Express 5 a 8 días (7%)</label></span><br>
+          <span><input type="radio" name="envío" id="premium" onclick="porcentajeEnvio(0.15)"> <label for="premium">Premium 2 a 5 días (15%)</label></span>
+        </div>
+
+        <br>
+
         <h4 class="mb-3">Dirección de envío</h4>
-        <input type="text" placeholder="Calle">
-        <input type="text" placeholder="Número">
-        <input type="text" placeholder="Ciudad">
+        <input type="text" placeholder="Calle" class="DireccionEnvio">
+        <input type="number" min="0" placeholder="Número" class="DireccionEnvio">
+        <input type="text" placeholder="Ciudad" class="DireccionEnvio">
+
+        <br>
+        <br>
+
+        <h4 class="mb-3">Seleccionar forma de pago</h4>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
+          Forma de pago
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Forma de pago</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <span><input type="radio" name="formaDePago" id="tarjeta"> <label for="tarjeta"><b>Tarjeta de crédito</b></label></span>
+                <br>
+                <div class="datosTarjeta">
+                  <label for="numero">Número de tarjeta</label> <input type="text" id="numero" disabled>
+                </div>
+                <div class="datosTarjeta">
+                  <label for="codigo">Código de seguridad</label> <input type="text" id="codigo" disabled>
+                </div>
+                <div class="datosTarjeta">
+                  <label for="vencimiento">Vencimiento (MM/AA)</label> <input type="text" id="vencimiento" disabled>
+                </div>
+                <br>
+                <span><input type="radio" name="formaDePago" id="transferencia"> <label for="transferencia"><b>Transferencia bancaria</b></label></span>
+                <div class="datosTransferencia">
+                  <label for="cuentaBancaria">Número de cuenta Bancaria</label> <input type="number" min="0" id="cuentaBancaria" disabled>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="container" id="cuentasCarrito">
       <div class="list-group-item">
         <h4 class="mb-3">Costos</h4>
-        <p>Subtotal: <span id="subtotal"></span></p>
-        <p>Costo de envío: <span id="costoEnvio"></span></p>
-        <p>Total: <span id="total"></span></p>
-
+        <div style="display:flex; justify-content:space-around;">
+          <span>Subtotal: <span id="subtotal"></span></span>
+          <span>Costo de envío: <span id="costoEnvio"></span></span>
+          <span><b>Total: <span id="total"></span></b></span>
+        </div>
       </div>
+    </div>
+
+    <br>
+
+    <span id="verificacionDatosCompletos"></span>
+
+    <div style="display:flex; justify-content:center;">
+      <button type="button" class="btn btn-primary" onclick="confirmarCompra()">
+        Confirmar compra
+      </button>
     </div>
   </div>
 

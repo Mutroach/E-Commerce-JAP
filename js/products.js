@@ -21,21 +21,23 @@ function content(jsonParametro){
         let product = jsonParametro[i];
 
         htmlContent = 
-        `<a class="list-group-item list-group-item-action" href="product-info.html" onclick="seleccionarProducto(`+ product.cost +`)">
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ product.name +`</h4>
+        `<div class="col-md-4">
+            <a class="card mb-4 shadow-sm custom-card" href="product-info.html" onclick="seleccionarProducto(`+ product.cost +`)">
+                <div class="row" style="padding:5px">
                     
-                        <small class="text-muted"> Precio: ` + product.currency + ` `+ product.cost +  ` <br> Cantidad de vendidos: ` + product.soldCount + `</small>
+                    <img src="` + product.imgSrc + `" alt="` + product.description + `" class="bd-placeholder-img card-img-top" style="padding:10px">
+                    <h3 class="m-3">`+ product.name +`</h3>
+
+                    <div class="card-body">
+                        <p class="card-text">` + product.description + `</p>
+
+                        <small class="text-muted"> Precio: ` + product.currency + ` `+ product.cost +  ` Cantidad de vendidos: ` + product.soldCount + `</small>
                     </div>
-                    <div><h5>` + product.description + `</h5></div>
+
+
                 </div>
-            </div>
-        </a>`;
+            </a>
+        </div>`;
         
         if(product.cost >= precioMinimo && product.cost <= precioMaximo || product.cost >= precioMinimo && precioMaximo == "" || product.cost <= precioMaximo && precioMinimo == "") {
             document.getElementById("productos").innerHTML += htmlContent;

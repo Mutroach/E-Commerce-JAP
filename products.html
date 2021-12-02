@@ -24,56 +24,56 @@
 
         <div class="dropdown py-2 d-md-inline-block">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="infoUsuario"></button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
-            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-            <a class="dropdown-item" href="index.html" onclick="cerrarSesion()">Cerrar sesión</a>
-            <a class="dropdown-item" id="ultimoAcceso"></a>
-          </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+              <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+              <a class="dropdown-item" href="index.html" onclick="cerrarSesion()">Cerrar sesión</a>
+              <a class="dropdown-item" id="ultimoAcceso"></a>
+            </div>
         </div>
       </div>
     </nav>
     
-    <div class="fondito">
+    <div>
     
       <div class="text-center p-4">
         <h2>Productos</h2>
-    </div>
+      </div>
 
-    <div class="container">
+      <div class="container">
 
-    <div style="padding: 15px;">
-        <a>Filtrar por precio</a>
-        <input type="number" placeholder="min." id="minimo" style="width: 60px;">
-        <input type="number" placeholder="máx." id="maximo" style="width: 60px;">
-        <button type="button" class="btn btn-light" id="filtroPrecioBtn">Filtrar</button>
-      
-      <span style="width: 5%;"> </span>
+        <div style="padding: 15px;">
+            <a>Filtrar por precio</a>
+            <input type="number" placeholder="min." id="minimo" style="width: 60px;">
+            <input type="number" placeholder="máx." id="maximo" style="width: 60px;">
+            <button type="button" class="btn btn-light" id="filtroPrecioBtn">Filtrar</button>
+          
+            <span style="width: 5%;"> </span>
 
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-light" id="filtroAscendenteBtn">
-          <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up mr-1"></i>Menor precio
-        </label>
-        <label class="btn btn-light" id="filtroDescendenteBtn">
-          <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Mayor precio
-        </label>
-        <label class="btn btn-light" id="filtroRelevanciaBtn">
-            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
-        </label>
-        
-        <label>
-          <input type="search" class="form-control" placeholder="Buscar" id="buscar">
-        </label>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-light" id="filtroAscendenteBtn">
+                  <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up mr-1"></i>Menor precio
+                </label>
+                <label class="btn btn-light" id="filtroDescendenteBtn">
+                  <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Mayor precio
+                </label>
+                <label class="btn btn-light" id="filtroRelevanciaBtn">
+                    <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
+                </label>
+                <label>
+                  <input type="search" class="form-control" placeholder="Buscar" id="buscar">
+                </label>
+              </div>
+        </div>
+
+        <div class="album bg-light fondito">
+          <div class="row" id="productos">
+          </div>
+        </div>
         
       </div>
     </div>
 
-    <div class="row" id="productos">
-    </div>
-
-  </div>
-
-  </div>
     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">

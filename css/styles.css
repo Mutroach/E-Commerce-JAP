@@ -11,6 +11,13 @@
   font-weight: bold;
 } */
 
+.datosTarjeta, .datosTransferencia{
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .jumbotron, .card-body, .container, .site-header{
   font-family: 'Raleway', serif !important;
 }
